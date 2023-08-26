@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+ <html> 
+ <head> 
+     <meta charset='utf-8'> 
+     <meta http-equiv='X-UA-Compatible' content='IE=edge'> 
+     <title>­Æ</title> 
+     <meta name='viewport' content='width=device-width, initial-scale=1'> 
+     <style> 
+   body{
+    margin:0;
+    padding:0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b1522;
+}
+
+.heart {
+    height: 150px;
+    width: 150px;
+    background-color:red;
+    position: relative;
+    transform: rotate(45deg);
+    box-shadow: -20px  20px 150px #f20044;
+    animation: palpitar 0.5s linear infinite alternate;
+    
+}
+.contenido {
+     position: fixed;
+     margin-bottom: 50px;
+     text-align: center;
+     
+}
+h1 {
+    color: white
+}
+h2 { color : white
+}
+
+@keyframes palpitar{
+    0%{
+        transform: rotate(45deg) scale(1.10);
+    }
+    80%{
+        transform: rotate(45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(45deg) scale(0.8);
+    } 
+}
+.heart::before{
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background: red;
+    top: -50%;
+    border-radius: 50%;
+    box-shadow: 10px  20px 150px #f20044;
+}
+.heart::after{
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background: red;
+    right: 50%;
+    border-radius: 50%;
+    box-shadow: 20px  20px 150px #f20044;
+}
+
+</style>
+<body>
+    <div class="heart"></div>
+
+    <div class="contenido"><h1>Querei salir</h1><h2>conmigo el domingo?</h2></div>
+
+  
+      
+</body>
+</html>
+     <script> 
+         function accionParaCuandoEllaDigaQueSi(){ 
+             alert('Nos vemos el domingo ♥'); 
+         } 
+  
+         function mueveElBoton(){ 
+             width = window.innerWidth; 
+             height = window.innerHeight; 
+  
+             newWidth = (Math.random() * width); 
+             newHeight = (Math.random() * height); 
+  
+             document.getElementById('btnNo').style.position = "absolute"; 
+             document.getElementById('btnNo').style.left = newWidth + "px"; 
+             document.getElementById('btnNo').style.top = newHeight + "px"; 
+  
+  
+         } 
+     </script> 
+ </head> 
+ <body> 
+     <h3>Salgamos el domingo a pecar </h3> 
+     <input type="button" onclick="accionParaCuandoEllaDigaQueSi()" id="btnSi" value="Si" /> 
+     <input type="button" id="btnNo" onmouseover="mueveElBoton()" value="No" /> 
+     <img src="Capy.png" width="200"> 
+ </body> 
+ </html>
